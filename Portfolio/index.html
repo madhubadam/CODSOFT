@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madhu Badam | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo">Madhu Badam</div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Hello, I'm <span>Madhu Badam</span></h1>
+        <h3>Frontend Developer &amp; Java Developer</h3>
+        <p>
+          I am a Computer Science Engineering student passionate about Software Development, 
+          Web Development, and Artificial Intelligence. Skilled in Java, Python,HTML, CSS, JavaScript,
+           SQL, Git, and GitHub, I enjoy building real-world projects and solving challenging problems
+            through code. I am currently focused on Data Structures & Algorithms and Full-Stack Development
+           while preparing for opportunities in the software industry.
+        </p>
+      </div>
+      <div class="hero-img">
+        <img src="image.png" alt="Madhu Badam" />
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h4>Education</h4>
+          <p>B.Tech in Computer Science Engineering (3rd Year) at Bonam Venkata Chalamayya Engineering College, Odalarevu — CGPA 8.9</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-code"></i></div>
+          <h4>What I Do</h4>
+          <p>Building responsive web applications using HTML, CSS, and JavaScript. Currently deepening expertise in Java and actively learning Data Structures & Algorithms.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-sitemap"></i></div>
+          <h4>Currently Learning</h4>
+          <p>Actively practicing Java DSA — arrays, linked lists, sorting algorithms, and problem-solving to sharpen logical thinking and prepare for technical interviews.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-bullseye"></i></div>
+          <h4>Goal</h4>
+          <p>To grow into a skilled full-stack developer, contribute to real-world projects, and secure a strong software engineering role after graduation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-box">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Python</div>
+        <div class="card">Git &amp; GitHub</div>
+        <div class="card">C Programming</div>
+        <div class="card">Java</div>
+        <div class="card">DSA</div>
+      </div>
+      <div class="skills-container">
+        <div class="skill">
+          <div class="skill-name"><span>HTML</span><span>90%</span></div>
+          <div class="progress"><div class="progress-bar html"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>CSS</span><span>75%</span></div>
+          <div class="progress"><div class="progress-bar css"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>JavaScript</span><span>50%</span></div>
+          <div class="progress"><div class="progress-bar js"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>Python</span><span>70%</span></div>
+          <div class="progress"><div class="progress-bar python"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>Java</span><span>60%</span></div>
+          <div class="progress"><div class="progress-bar java"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>Git &amp; GitHub</span><span>60%</span></div>
+          <div class="progress"><div class="progress-bar git"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>C Programming</span><span>50%</span></div>
+          <div class="progress"><div class="progress-bar c"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>DSA (Java)</span><span>40%</span></div>
+          <div class="progress"><div class="progress-bar dsa"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <p class="section-subtitle">Click any certificate to view it</p>
+
+      <div class="cert-container">
+
+        <div class="cert-card" onclick="openCert('AI for Beginners','HP LIFE','May 2026','Gained foundational knowledge of AI concepts, applications in business, the role of data in AI, and ethical implications.')">
+          <div class="cert-top">
+            <span class="cert-badge">HP LIFE</span>
+            <span class="cert-date-tag">May 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fas fa-robot"></i></div>
+          <h3>AI for Beginners</h3>
+          <p>Foundational AI concepts, business applications & ethics</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Programming using Java','Infosys Springboard','Oct 2025','Completed Java programming covering core fundamentals, OOP principles, and essential programming concepts.')">
+          <div class="cert-top">
+            <span class="cert-badge">Infosys Springboard</span>
+            <span class="cert-date-tag">Oct 2025</span>
+          </div>
+          <div class="cert-icon"><i class="fab fa-java"></i></div>
+          <h3>Programming using Java</h3>
+          <p>Core Java fundamentals and OOP concepts</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Programming Fundamentals using Python – Part 1','Infosys Springboard','Oct 2025','Python fundamentals covering variables, data types, control flow, loops, and functions.')">
+          <div class="cert-top">
+            <span class="cert-badge">Infosys Springboard</span>
+            <span class="cert-date-tag">Oct 2025</span>
+          </div>
+          <div class="cert-icon"><i class="fab fa-python"></i></div>
+          <h3>Python Fundamentals – Part 1</h3>
+          <p>Variables, data types, control flow & functions</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Programming Fundamentals using Python – Part 2','Infosys Springboard','Mar 2026','Advanced Python fundamentals including modules, file handling, and error management.')">
+          <div class="cert-top">
+            <span class="cert-badge">Infosys Springboard</span>
+            <span class="cert-date-tag">Mar 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fab fa-python"></i></div>
+          <h3>Python Fundamentals – Part 2</h3>
+          <p>Modules, file handling & error management</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Object Oriented Programming using Python','Infosys Springboard','Mar 2026','Mastered OOP concepts — classes, objects, inheritance, polymorphism, and encapsulation using Python.')">
+          <div class="cert-top">
+            <span class="cert-badge">Infosys Springboard</span>
+            <span class="cert-date-tag">Mar 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fas fa-cubes"></i></div>
+          <h3>OOP using Python</h3>
+          <p>Classes, inheritance, polymorphism & encapsulation</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Git Training','Simplilearn','May 2026','Version control, repositories, branching, merging, and collaborative workflows using Git.')">
+          <div class="cert-top">
+            <span class="cert-badge">Simplilearn</span>
+            <span class="cert-date-tag">May 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fab fa-git-alt"></i></div>
+          <h3>Git Training</h3>
+          <p>Version control, branching & collaborative workflows</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('GitHub Basics','Simplilearn','May 2026','Remote repositories, pull requests, issues, and team collaboration on GitHub.')">
+          <div class="cert-top">
+            <span class="cert-badge">Simplilearn</span>
+            <span class="cert-date-tag">May 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fab fa-github"></i></div>
+          <h3>GitHub Basics</h3>
+          <p>Remote repos, pull requests & team collaboration</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('C Programming Basics','Simplilearn','May 2026','Core C programming — syntax, pointers, memory management, and data structures.')">
+          <div class="cert-top">
+            <span class="cert-badge">Simplilearn</span>
+            <span class="cert-date-tag">May 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fas fa-terminal"></i></div>
+          <h3>C Programming Basics</h3>
+          <p>Syntax, pointers, memory management & data structures</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Introduction to Generative AI','Simplilearn','May 2026','Generative AI fundamentals, large language models, and real-world AI applications.')">
+          <div class="cert-top">
+            <span class="cert-badge">Simplilearn</span>
+            <span class="cert-date-tag">May 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fas fa-brain"></i></div>
+          <h3>Introduction to Generative AI</h3>
+          <p>LLMs, GenAI fundamentals & real-world applications</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Introduction to Prompt Engineering','Simplilearn','Feb 2026','Prompt design strategies, few-shot prompting, and best practices for working with AI language models.')">
+          <div class="cert-top">
+            <span class="cert-badge">Simplilearn</span>
+            <span class="cert-date-tag">Feb 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fas fa-comment-dots"></i></div>
+          <h3>Intro to Prompt Engineering</h3>
+          <p>Prompt strategies & best practices for AI models</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Generative AI Mastermind','Outskill','2026','Advanced Generative AI concepts and practical implementations in a hands-on workshop.')">
+          <div class="cert-top">
+            <span class="cert-badge">Outskill</span>
+            <span class="cert-date-tag">2026</span>
+          </div>
+          <div class="cert-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Generative AI Mastermind</h3>
+          <p>Advanced GenAI concepts & practical implementations</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('Web Development','Sololearn','May 2026','Demonstrated theoretical and practical understanding of HTML, CSS, and JavaScript in web development.')">
+          <div class="cert-top">
+            <span class="cert-badge">Sololearn</span>
+            <span class="cert-date-tag">May 2026</span>
+          </div>
+          <div class="cert-icon"><i class="fas fa-globe"></i></div>
+          <h3>Web Development</h3>
+          <p>HTML, CSS &amp; JavaScript — theory and practice</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cert-card" onclick="openCert('HackMelaa 2026 – Hackathon','HackMelaa · FEBE','2026','Certificate of Appreciation for active participation in HackMelaa 2026 Centralised Hackathon, showcasing innovation and technical excellence.')">
+          <div class="cert-top">
+            <span class="cert-badge hackathon">HackMelaa · FEBE</span>
+            <span class="cert-date-tag">2026</span>
+          </div>
+          <div class="cert-icon"><i class="fas fa-trophy"></i></div>
+          <h3>HackMelaa 2026</h3>
+          <p>Centralised Hackathon — innovation & technical excellence</p>
+          <span class="cert-view">View Certificate <i class="fas fa-arrow-right"></i></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="modal-overlay" onclick="closeCert(event)">
+      <div class="modal-box">
+        <button class="modal-close" onclick="document.getElementById('certModal').style.display='none'">&times;</button>
+        <div class="modal-icon"><i class="fas fa-certificate"></i></div>
+        <div class="modal-badge" id="modalBadge"></div>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-date" id="modalDate"></p>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-seal"><i class="fas fa-check-circle"></i> Certificate Verified</div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-container">
+        <div class="project-card">
+          <div class="proj-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Teacher Counselling System</h3>
+          <p>A web-based counselling system enabling student guidance management, attendance monitoring, session tracking, and educational support workflows.</p>
+          <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <a href="https://github.com/madhubadam/edutech.git" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card">
+          <div class="proj-icon"><i class="fas fa-gamepad"></i></div>
+          <h3>Tic Tac Toe Game</h3>
+          <p>A classic Tic Tac Toe game with clean UI, win detection, draw detection, and reset functionality for smooth two-player gameplay.</p>
+          <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <a href="https://github.com/madhubadam/tic-rac-toe.git" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card">
+          <div class="proj-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3>Amazon Clone</h3>
+          <p>A pixel-perfect responsive Amazon homepage clone built with HTML and CSS, replicating the navigation, hero banners, and product grid layout.</p>
+          <div class="proj-tags"><span>HTML</span><span>CSS</span></div>
+          <a href="https://github.com/madhubadam/Amazon_clone.git" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="resume-section">
+      <h2>Resume</h2>
+      <p class="resume-subtitle">Download my resume to learn more about my education, skills, and experience.</p>
+      <div class="resume-card">
+        <div class="resume-icon"><i class="fas fa-file-pdf"></i></div>
+        <div class="resume-info">
+          <h3>Madhu Badam — Resume</h3>
+          <p>B.Tech CSE · Frontend &amp; Java Developer · Bonam Venkata Chalamayya Engineering College</p>
+        </div>
+        <a href="Resume.pdf" download class="resume-download-btn">
+          <i class="fas fa-download"></i> Download PDF
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-grid">
+        <a href="mailto:badammadhu12@gmail.com" class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>badammadhu12@gmail.com</span>
+        </a>
+        <a href="tel:+919381724871" class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+91 9381724871</span>
+        </a>
+        <a href="https://www.linkedin.com/in/madhu-badam" target="_blank" class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <span>linkedin.com/in/madhu-badam</span>
+        </a>
+        <a href="https://github.com/madhubadam" target="_blank" class="contact-item">
+          <i class="fab fa-github"></i>
+          <span>github.com/madhubadam</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Madhu Badam | All Rights Reserved</p>
+    </footer>
+
+    <script>
+      function openCert(title, issuer, date, desc) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalBadge').textContent = issuer;
+        document.getElementById('modalDate').textContent = date;
+        document.getElementById('modalDesc').textContent = desc;
+        document.getElementById('certModal').style.display = 'flex';
+      }
+      function closeCert(e) {
+        if (e.target === document.getElementById('certModal')) {
+          document.getElementById('certModal').style.display = 'none';
+        }
+      }
+    </script>
+  </body>
+</html>
