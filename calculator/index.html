@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calc-wrapper">
+    <div class="label"></div>
+    <div class="calculator">
+      <div class="display">
+        <div class="history" id="history"></div>
+        <div class="main-display" id="main-display">0</div>
+      </div>
+      <div class="buttons">
+        <!-- Row 1 -->
+        <button class="btn-fn btn-clear" id="btn-ac"  onclick="clearAll()">AC</button>
+        <button class="btn-fn"           onclick="toggleSign()">+/−</button>
+        <button class="btn-fn"           onclick="percent()">%</button>
+        <button class="btn-op"           onclick="setOp('/')" id="op-/">÷</button>
+
+        <!-- Row 2 -->
+        <button class="btn-num" onclick="input('7')">7</button>
+        <button class="btn-num" onclick="input('8')">8</button>
+        <button class="btn-num" onclick="input('9')">9</button>
+        <button class="btn-op"  onclick="setOp('*')" id="op-*">×</button>
+
+        <!-- Row 3 -->
+        <button class="btn-num" onclick="input('4')">4</button>
+        <button class="btn-num" onclick="input('5')">5</button>
+        <button class="btn-num" onclick="input('6')">6</button>
+        <button class="btn-op"  onclick="setOp('-')" id="op--">−</button>
+
+        <!-- Row 4 -->
+        <button class="btn-num" onclick="input('1')">1</button>
+        <button class="btn-num" onclick="input('2')">2</button>
+        <button class="btn-num" onclick="input('3')">3</button>
+        <button class="btn-op"  onclick="setOp('+')" id="op-+">+</button>
+
+        <!-- Row 5 -->
+        <button class="btn-num btn-zero" onclick="input('0')">0</button>
+        <button class="btn-num"          onclick="inputDot()">.</button>
+        <button class="btn-eq"           onclick="calculate()">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let current    = '0';
+    let previous   = '';
+    let operator   = null;
+    let resetNext  = false;
+
+    const display  = document.getElementById('main-display');
+    const history  = document.getElementById('history');
+    const acBtn    = document.getElementById('btn-ac');
+
+    function updateDisplay(val) {
+      const s = String(val);
+      display.style.fontSize = s.length > 10 ? '24px' : s.length > 7 ? '30px' : '38px';
+      display.textContent = s;
+      acBtn.textContent = (current === '0' && !previous) ? 'AC' : 'C';
+    }
+
+    function clearAll() {
+      current = '0'; previous = ''; operator = null; resetNext = false;
+      history.textContent = '';
+      highlightOp(null);
+      updateDisplay('0');
+    }
+
+    function input(digit) {
+      if (resetNext) { current = digit; resetNext = false; }
+      else current = (current === '0') ? digit : (current.length < 13 ? current + digit : current);
+      updateDisplay(current);
+    }
+
+    function inputDot() {
+      if (resetNext) { current = '0.'; resetNext = false; updateDisplay(current); return; }
+      if (!current.includes('.')) { current += '.'; updateDisplay(current); }
+    }
+
+    function toggleSign() {
+      current = String(parseFloat(current) * -1);
+      updateDisplay(current);
+    }
+
+    function percent() {
+      current = String(parseFloat(current) / 100);
+      updateDisplay(current);
+    }
+
+    function setOp(op) {
+      if (operator && !resetNext) calculate(true);
+      previous = current;
+      operator = op;
+      resetNext = true;
+      const symMap = { '+': '+', '-': '−', '*': '×', '/': '÷' };
+      history.textContent = previous + ' ' + symMap[op];
+      highlightOp(op);
+    }
+
+    function calculate(chain = false) {
+      if (!operator || !previous) return;
+      const a = parseFloat(previous);
+      const b = parseFloat(current);
+      let result;
+      switch (operator) {
+        case '+': result = a + b; break;
+        case '-': result = a - b; break;
+        case '*': result = a * b; break;
+        case '/': result = b === 0 ? 'Error' : a / b; break;
+      }
+      const symMap = { '+': '+', '-': '−', '*': '×', '/': '÷' };
+      if (!chain) history.textContent = previous + ' ' + symMap[operator] + ' ' + current + ' =';
+      const display_result = (result === 'Error') ? 'Error' : parseFloat(result.toFixed(10)).toString();
+      current = display_result;
+      if (!chain) { operator = null; highlightOp(null); }
+      previous = display_result;
+      resetNext = true;
+      updateDisplay(display_result);
+    }
+
+    function highlightOp(op) {
+      ['+', '-', '*', '/'].forEach(o => {
+        const el = document.getElementById('op-' + o);
+        if (el) el.classList.toggle('active', o === op);
+      });
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', e => {
+      if (e.key >= '0' && e.key <= '9') input(e.key);
+      else if (e.key === '.') inputDot();
+      else if (e.key === '+') setOp('+');
+      else if (e.key === '-') setOp('-');
+      else if (e.key === '*') setOp('*');
+      else if (e.key === '/') { e.preventDefault(); setOp('/'); }
+      else if (e.key === 'Enter' || e.key === '=') calculate();
+      else if (e.key === 'Backspace') {
+        current = current.length > 1 ? current.slice(0, -1) : '0';
+        updateDisplay(current);
+      }
+      else if (e.key === 'Escape') clearAll();
+      else if (e.key === '%') percent();
+    });
+
+    updateDisplay('0');
+  </script>
+</body>
+</html>
